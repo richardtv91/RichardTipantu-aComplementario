@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RichardTipantuñaComplementario.Views.vInsertar"
+             Title="vInsertar">
+    <VerticalStackLayout>
+        <Label 
+            Text="Insertar Estudiante"
+            TextColor="Blue"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry x:Name="txtNombre"
+               Placeholder="Ingrese Nombre"/>
+
+        <Entry x:Name="txtApellido"
+               Placeholder="Ingrese Apellido"/>
+
+        <Entry x:Name="txtCurso"
+       Placeholder="Ingrese Curso"
+       MaxLength="2"/>
+        <Entry x:Name="txtParalelo"
+  Placeholder="Ingrese Paralelo"
+  MaxLength="2"/>
+        <Entry x:Name="txtNota"
+  Placeholder="Ingrese Nota Final"
+  MaxLength="2"
+  Keyboard="Numeric"/>
+
+
+        <Button x:Name="btnGuardar"
+                Text="Guardar"
+                Clicked="btnGuardar_Clicked"
+                WidthRequest="100"
+HeightRequest="40"
+HorizontalOptions="Center"
+VerticalOptions="Center"
+BackgroundColor="#3498db"
+TextColor="White"
+CornerRadius="10"
+                />
+
+
+    </VerticalStackLayout>
+</ContentPage>

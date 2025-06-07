@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RichardTipantuñaComplementario.Views.vActElim"
+             Title="vActElim">
+    <VerticalStackLayout>
+        <Label 
+            Text="ACTUALIZAR/ELIMINAR ESTDUAINTES"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry x:Name="txtCodigo"
+               IsReadOnly="True"
+               IsVisible = "False"/>
+
+        <Entry x:Name="txtNombre"
+               Placeholder="Ingrese Nombre"/>
+
+        <Entry x:Name="txtDescripcion"
+               Placeholder="Ingrese Descripcion"/>
+
+        <Entry x:Name="txtStatus"
+               Placeholder="Estado"/>
+
+        <Button x:Name="btnActualizar"
+                Text="Actualizar"
+                Clicked="btnActualizar_Clicked"
+                WidthRequest="100"
+HeightRequest="40"
+HorizontalOptions="Center"
+VerticalOptions="Center"
+BackgroundColor="#3498db"
+TextColor="White"
+CornerRadius="10" 
+ />
+
+        <BoxView WidthRequest="25" />
+        <Button x:Name="btnEliminar"
+                Text="Eliminar"
+                Clicked="btnEliminar_Clicked"
+                WidthRequest="100"
+HeightRequest="40"
+HorizontalOptions="Center"
+VerticalOptions="Center"
+BackgroundColor="Red"
+TextColor="White"
+CornerRadius="10"/>
+
+
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>
