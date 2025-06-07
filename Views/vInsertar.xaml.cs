@@ -26,11 +26,11 @@ public partial class vInsertar : ContentPage
 
         var data = new
         {
-            nombre = nombre,
-            apellido = apellido,
-            curso = curso,
-            paralelo=paralelo,
-            nota=nota
+            Nombre = nombre,
+            Apellido = apellido,
+            Curso = curso,
+            Paralelo=paralelo,
+            Nota_Final=nota
         };
 
         var json = JsonSerializer.Serialize(data);
@@ -38,7 +38,7 @@ public partial class vInsertar : ContentPage
 
         try
         {
-            var response = await _httpClient.PostAsync("https://credp-s.net.ec/api.php?table=rol", content);
+            var response = await _httpClient.PostAsync("https://credp-s.net.ec/apiba.php?table=estudiantes", content);
 
             if (response.IsSuccessStatusCode)
             {

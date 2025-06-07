@@ -28,16 +28,14 @@ public partial class Login : ContentPage
 
             var json = JsonConvert.SerializeObject(loginData);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync("https://credp-s.net.ec/apiba.php?table=persona&action=login", content);
+            var response = await _httpClient.PostAsync("https://credp-s.net.ec/apiba.php?table=estudiante_login&action=login", content);
             if (response.IsSuccessStatusCode)
             {
                 var responseData = await response.Content.ReadAsStringAsync();
                 var estudiante = JsonConvert.DeserializeObject<Estudiante_Login>(responseData);
-                // Aquí puedes guardar el token o realizar otras acciones necesarias
 
                 await Navigation.PushAsync(new Views.vEstudiante());
-                //await DisplayAlert("Éxito", "Inicio de sesión exitoso", "OK");
-                // Navegar a la página principal o realizar otra acción
+              //  await DisplayAlert("Éxito", "Inicio de sesión exitoso", "OK");
             }
             else
             {

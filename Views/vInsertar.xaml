@@ -18,13 +18,13 @@
 
         <Entry x:Name="txtCurso"
        Placeholder="Ingrese Curso"
-       MaxLength="2"/>
+  />
         <Entry x:Name="txtParalelo"
   Placeholder="Ingrese Paralelo"
-  MaxLength="2"/>
+  MaxLength="1"/>
         <Entry x:Name="txtNota"
   Placeholder="Ingrese Nota Final"
-  MaxLength="2"
+  
   Keyboard="Numeric"/>
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RichardTipantuñaComplementario.Models
 {
-    public class Estudiante
+    public class Estudiantes
     {
         public int Cod_Estudiante { get; set; }
         public string Nombre { get; set; }

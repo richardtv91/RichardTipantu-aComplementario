@@ -22,6 +22,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Label Text="Id"
@@ -47,6 +49,17 @@
    Grid.Column="3"
     Grid.Row="0"
           FontAttributes="Bold"/>
+            <Label Text="Paralelo"
+FontSize="14"
+Grid.Column="4"
+ Grid.Row="0"
+       FontAttributes="Bold"/>
+            <Label Text="Nota Final"
+FontSize="14"
+Grid.Column="5"
+ Grid.Row="0"
+       FontAttributes="Bold"/>
+
 
         </Grid>
 
@@ -70,25 +83,35 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
 
                                 <Label x:Name="lblCodigo" Text="{Binding Cod_Estudiante}"
                        Grid.Column="0"
                        Grid.Row="1"
                         />
-                                <Label x:Name="lblNombre" Text="{Binding nombre}"
+                                <Label x:Name="lblNombre" Text="{Binding Nombre}"
                         Grid.Column="1"
                         Grid.Row="1"
                          />
-                                <Label x:Name="lblApellido" Text="{Binding apellido}"
+                                <Label x:Name="lblApellido" Text="{Binding Apellido}"
                         Grid.Column="2"
                          Grid.Row="1"
                         />
 
-                                <Label x:Name="lblEdad" Text="{Binding curso}"
+                                <Label x:Name="lblCurso" Text="{Binding Curso}"
                        Grid.Column="3"
                         Grid.Row="1"
                         />
+                                <Label x:Name="lblParalelo" Text="{Binding Paralelo}"
+Grid.Column="4"
+ Grid.Row="1"
+ />
+                                <Label x:Name="lblNota" Text="{Binding Nota_Final}"
+Grid.Column="5"
+ Grid.Row="1"
+ />
 
                             </Grid>
 

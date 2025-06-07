@@ -6,9 +6,9 @@ namespace RichardTipantuñaComplementario.Views;
 
 public partial class vEstudiante : ContentPage
 {
-    private const string Url = "https://credp-s.net.ec/api.php?table=rol";
+    private const string Url = "https://credp-s.net.ec/apiba.php?table=estudiantes";
     private readonly HttpClient cliente = new HttpClient();
-    private ObservableCollection<Estudiante> estud;
+    private ObservableCollection<Estudiantes> estud;
 
     public vEstudiante()
     {
@@ -20,9 +20,9 @@ public partial class vEstudiante : ContentPage
     {
         var content = await cliente.GetStringAsync(Url);
 
-        var mostrarEst = JsonConvert.DeserializeObject<List<Estudiante>>(content) ?? new();
+        var mostrarEst = JsonConvert.DeserializeObject<List<Estudiantes>>(content) ?? new();
        
-        estud = new ObservableCollection<Estudiante>(mostrarEst);
+        estud = new ObservableCollection<Estudiantes>(mostrarEst);
         
 
         
@@ -37,7 +37,7 @@ public partial class vEstudiante : ContentPage
 
     private void lvEstudiantes_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
-       var objEstudiante = (Estudiante)e.SelectedItem;
+       var objEstudiante = (Estudiantes)e.SelectedItem;
        Navigation.PushAsync(new Views.vActElim(objEstudiante));
     }
 }

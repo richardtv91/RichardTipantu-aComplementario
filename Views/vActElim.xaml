@@ -16,11 +16,15 @@
         <Entry x:Name="txtNombre"
                Placeholder="Ingrese Nombre"/>
 
-        <Entry x:Name="txtDescripcion"
-               Placeholder="Ingrese Descripcion"/>
+        <Entry x:Name="txtApellido"
+               Placeholder="Ingrese apellido"/>
 
-        <Entry x:Name="txtStatus"
-               Placeholder="Estado"/>
+        <Entry x:Name="txtCurso"
+               Placeholder="curso"/>
+        <Entry x:Name="txtParalelo"
+       Placeholder="Paralelo"/>
+        <Entry x:Name="txtNota"
+       Placeholder="Nota"/>
 
         <Button x:Name="btnActualizar"
                 Text="Actualizar"

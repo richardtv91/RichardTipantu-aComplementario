@@ -11,7 +11,7 @@ public partial class vActElim : ContentPage
     private readonly HttpClient _httpClient;
     private object data;
 
-    public vActElim(Estudiante datos)
+    public vActElim(Estudiantes datos)
     {
         InitializeComponent();
         _httpClient = new HttpClient();
@@ -20,30 +20,36 @@ public partial class vActElim : ContentPage
         // Envio los datos
         txtCodigo.Text = datos.Cod_Estudiante.ToString();
         txtNombre.Text = datos.Nombre.ToString();
-        txtDescripcion.Text = datos.Apellido.ToString();
-        txtStatus.Text = datos.Curso.ToString();
-        int id = int.Parse(txtCodigo.Text); // id del registro a actualizar
+        txtApellido.Text = datos.Apellido.ToString();
+        txtCurso.Text = datos.Curso.ToString();
+        txtParalelo.Text = datos.Paralelo.ToString();
+        txtNota.Text = datos.Nota_Final.ToString();
+        int Cod_Estudiante = int.Parse(txtCodigo.Text); // id del registro a actualizar
         var data = new
         {
-            nombrerol = txtNombre.Text,
-            descripcion = txtDescripcion.Text,
-            status = txtStatus.Text
+            Nombre = txtNombre.Text,
+            Apellido = txtApellido.Text,
+            Curso = txtCurso.Text,
+            Paralelo = txtParalelo.Text,
+            Nota_Final = txtNota.Text
         };
 
     }
 
     private async void btnActualizar_Clicked(object sender, EventArgs e)
     {
-        int id = int.Parse(txtCodigo.Text);
+        int Cod_Estudiante = int.Parse(txtCodigo.Text);
         var data = new
         {
-            nombrerol = txtNombre.Text,
-            descripcion = txtDescripcion.Text,
-            status = txtStatus.Text
+            Nombre = txtNombre.Text,
+            Apellido =txtApellido.Text,
+            Curso = txtCurso.Text,
+            Paralelo= txtParalelo.Text,
+            Nota_Final = txtNota.Text
         };
         try
         {
-            string url = $"https://credp-s.net.ec/api.php?table=rol&{GetPrimaryKeyParamName()}={id}";
+            string url = $"https://credp-s.net.ec/apiba.php?table=estudiantes&{GetPrimaryKeyParamName()}={Cod_Estudiante}";
 
             string json = JsonSerializer.Serialize(data);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -70,13 +76,12 @@ public partial class vActElim : ContentPage
 
     private async void btnEliminar_Clicked(object sender, EventArgs e)
     {
-        int id = int.Parse(txtCodigo.Text);
+        int Cod_Estudiante = int.Parse(txtCodigo.Text);
         var result = await DisplayAlert("Eliminar", "¿Está seguri que desea eliminar este elemento?", "Eliminar", "Cancelar");
         {
             try
             {
-                //string url = $"https://credp-s.net.ec/api.php?table=rol&idrol={id}";
-                string url = $"https://credp-s.net.ec/api.php?table=rol&{GetPrimaryKeyParamName()}={id}";
+                string url = $"https://credp-s.net.ec/apiba.php?table=estudiantes&{GetPrimaryKeyParamName()}={Cod_Estudiante}";
 
 
                 var response = await _httpClient.DeleteAsync(url);
@@ -100,7 +105,7 @@ public partial class vActElim : ContentPage
     }
     private string GetPrimaryKeyParamName()
     {
-        return "idrol"; // Cambia esto si tu clave primaria es diferente
+        return "Cod_Estudiante"; // Cambia esto si tu clave primaria es diferente
     }
 
 }
